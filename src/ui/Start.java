@@ -10,12 +10,21 @@ public class Start extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	public static void main(String[] args) {
-		int width = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getWidth();
-		int height = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getHeight();
+		int width = getScreenWidth();
+		int height = getScreenHeight();
 		System.out.println(width+"x"+height);
 		Start userInterface = new Start();
 		userInterface.setVisible(true);
 		userInterface.setResizable(false);
+	}
+
+	public static int getScreenHeight() {
+		return GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getHeight();
+	}
+
+	public static int getScreenWidth() {
+		int width = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getWidth();
+		return width;
 	}
 	
 	public Start() {
