@@ -150,10 +150,15 @@ public class ResistorObject {
 	
 	private void defineTempCoeff() {
 		
+		setTempCoeff("black", 250);
 		setTempCoeff("brown", 100);
 		setTempCoeff("red", 50);
 		setTempCoeff("orange", 15);
 		setTempCoeff("yellow", 25);
+		setTempCoeff("green", 20);
+		setTempCoeff("blue", 10);
+		setTempCoeff("violet", 5);
+		setTempCoeff("grey", 1);
 		
 	}
 	
