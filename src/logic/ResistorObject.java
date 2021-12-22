@@ -135,6 +135,16 @@ public class ResistorObject {
 	
 	private void defineTolerance() {
 		
+		setTolerance("brown", "±1%");
+		setTolerance("red", "±2%");
+		setTolerance("green", "±0.5%");
+		setTolerance("blue", "±0.25%");
+		setTolerance("violet", "±0.10%");
+		setTolerance("grey", "±0.05%");
+		setTolerance("gold", "±5%");
+		setTolerance("silver", "±10%");
+		setTolerance(null, "±20%");
+		
 	}
 	
 	
@@ -146,6 +156,8 @@ public class ResistorObject {
 	private void setDefaultValues() {
 		defineDigits();
 		defineMultiplier();
+		defineTolerance();
+		
 		
 	}
 	
