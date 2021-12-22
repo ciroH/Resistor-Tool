@@ -10,37 +10,70 @@ public class ResistorObject {
 	HashMap<String, String> tolerance;
 	HashMap<String, Integer> tempCoeff;
 	
+	public ResistorObject() {
+		setDefaultValues();
+		
+	}
 	
-	public HashMap<String, Integer> getDigit1(String color) {
-		return digit1;
+	public Integer getDigit1(String color) {
+		return digit1.get(color);
 	}
 	
 	
-	public HashMap<String, Integer> getDigit2(String color) {
-		return digit2;
+	public Integer getDigit2(String color) {
+		return digit2.get(color);
 	}
 	
 	
-	public HashMap<String, Integer> getDigit3(String color) {
-		return digit3;
+	public Integer getDigit3(String color) {
+		return digit3.get(color);
 	}
 	
 	
-	public HashMap<String, Float> getMultiplier(String color) {
-		return multiplier;
+	public Float getMultiplier(String color) {
+		return multiplier.get(color);
 	}
 	
 	
-	public HashMap<String, String> getTolerance(String color) {
-		return tolerance;
+	public String getTolerance(String color) {
+		return tolerance.get(color);
 	}
 	
 	
-	public HashMap<String, Integer> getTempCoeff(String color) {
-		return tempCoeff;
+	public Integer getTempCoeff(String color) {
+		return tempCoeff.get(color);
 	}
 	
 	
+	
+	private void setDigit1(String key, Integer value) {
+		this.digit1.put(key, value); 
+	}
+
+	private void setDigit2(String key, Integer value) {
+		this.digit2.put(key, value);
+	}
+
+	private void setDigit3(String key, Integer value) {
+		this.digit3.put(key, value);
+	}
+
+	private void setMultiplier(String key, Float value) {
+		this.multiplier.put(key, value);
+	}
+
+	private void setTolerance(String key, String value) {
+		this.tolerance.put(key, value);
+	}
+
+	private void setTempCoeff(String key, Integer value) {
+		this.tempCoeff.put(key, value);
+	}
+
+	private void setDefaultValues() {
+		
+		
+	}
 	
 	
 }
