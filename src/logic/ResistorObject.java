@@ -70,8 +70,69 @@ public class ResistorObject {
 		this.tempCoeff.put(key, value);
 	}
 
-	private void setDefaultValues() {
+	
+	private void defineDigits() {
 		
+		setDigit1("black", 0);
+		setDigit2("black", 0);
+		setDigit3("black", 0);
+		
+		setDigit1("brown", 1);
+		setDigit2("brown", 1);
+		setDigit3("brown", 1);
+		
+		setDigit1("red", 2);
+		setDigit2("red", 2);
+		setDigit3("red", 2);
+		
+		setDigit1("orange", 3);
+		setDigit2("orange", 3);
+		setDigit3("orange", 3);
+	
+		setDigit1("yellow", 4);
+		setDigit2("yellow", 4);
+		setDigit3("yellow", 4);
+	
+		setDigit1("green", 5);
+		setDigit2("green", 5);
+		setDigit3("green", 5);
+		
+		setDigit1("blue", 6);
+		setDigit2("blue", 6);
+		setDigit3("blue", 6);
+		
+		setDigit1("violet", 7);
+		setDigit2("violet", 7);
+		setDigit3("violet", 7);
+		
+		setDigit1("grey", 8);
+		setDigit2("grey", 8);
+		setDigit3("grey", 8);
+		
+		setDigit1("white", 9);
+		setDigit2("white", 9);
+		setDigit3("white", 9);
+		
+	}
+	
+	
+	private void defineMultiplier() {
+		
+	}
+	
+	
+	private void defineTolerance() {
+		
+	}
+	
+	
+	private void defineTempCoeff() {
+		
+	}
+	
+	
+	private void setDefaultValues() {
+		defineDigits();
 		
 	}
 	
