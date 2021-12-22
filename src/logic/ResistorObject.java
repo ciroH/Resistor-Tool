@@ -118,6 +118,18 @@ public class ResistorObject {
 	
 	private void defineMultiplier() {
 		
+		setMultiplier("black", 1f);
+		setMultiplier("brown", 10f);
+		setMultiplier("red", 100f);
+		setMultiplier("orange", 1000f);
+		setMultiplier("yellow", 10000f);
+		setMultiplier("green", 100000f);
+		setMultiplier("blue", 1000000f);
+		setMultiplier("violet", 10000000f);
+		setMultiplier("grey", 100000000f);
+		setMultiplier("white", 1000000000f);
+		setMultiplier("gold", 0.1f);
+		setMultiplier("silver", 0.01f);
 	}
 	
 	
@@ -133,6 +145,7 @@ public class ResistorObject {
 	
 	private void setDefaultValues() {
 		defineDigits();
+		defineMultiplier();
 		
 	}
 	
