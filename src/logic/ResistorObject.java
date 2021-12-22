@@ -150,6 +150,11 @@ public class ResistorObject {
 	
 	private void defineTempCoeff() {
 		
+		setTempCoeff("brown", 100);
+		setTempCoeff("red", 50);
+		setTempCoeff("orange", 15);
+		setTempCoeff("yellow", 25);
+		
 	}
 	
 	
@@ -157,7 +162,7 @@ public class ResistorObject {
 		defineDigits();
 		defineMultiplier();
 		defineTolerance();
-		
+		defineTempCoeff();
 		
 	}
 	
