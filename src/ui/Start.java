@@ -35,7 +35,7 @@ public class Start extends JFrame{
 	public Start() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBackground(Color.GRAY);
-		setBounds(0,0,400,300);
+		setBounds(0,0,240,300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -50,7 +50,7 @@ public class Start extends JFrame{
 		
 		JComboBox<String> bandsComboBox = new JComboBox<String>();
 		bandsComboBox.setBackground(Color.LIGHT_GRAY);
-		bandsComboBox.setBounds(20, 10, 120, 20);
+		bandsComboBox.setBounds(50, 12, 140, 20);
 		for (int i = 0; i < comboBoxOptions.size(); i++) {
 			bandsComboBox.addItem(comboBoxOptions.get(i));	
 		}
@@ -62,6 +62,11 @@ public class Start extends JFrame{
 		});
 		
 		contentPane.add(bandsComboBox);
+		
+		JPanel ResistorPane = new JPanel();
+		ResistorPane.setBackground(new Color(210, 180, 140));
+		ResistorPane.setBounds(50, 83, 140, 25);
+		contentPane.add(ResistorPane);
 	}
 	
 	private void ArrangeUI(String numberOfBands) {
