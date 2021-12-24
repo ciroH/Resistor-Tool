@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.awt.Color;
 import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Start extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -46,13 +48,23 @@ public class Start extends JFrame{
 		comboBoxOptions.add("5 Bands");
 		comboBoxOptions.add("6 Bands");
 		
-		JComboBox bandsComboBox = new JComboBox();
+		JComboBox<String> bandsComboBox = new JComboBox<String>();
 		bandsComboBox.setBackground(Color.LIGHT_GRAY);
 		bandsComboBox.setBounds(20, 10, 120, 20);
 		for (int i = 0; i < comboBoxOptions.size(); i++) {
 			bandsComboBox.addItem(comboBoxOptions.get(i));	
 		}
 		bandsComboBox.setSelectedIndex(1);
+		bandsComboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ArrangeUI(bandsComboBox.getSelectedItem().toString());
+			}
+		});
+		
 		contentPane.add(bandsComboBox);
+	}
+	
+	private void ArrangeUI(String numberOfBands) {
+		
 	}
 }
