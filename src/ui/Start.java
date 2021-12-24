@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GraphicsEnvironment;
 import java.awt.Color;
+import javax.swing.JComboBox;
 
 public class Start extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -36,5 +37,10 @@ public class Start extends JFrame{
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JComboBox bandsComboBox = new JComboBox();
+		bandsComboBox.setBackground(Color.LIGHT_GRAY);
+		bandsComboBox.setBounds(20, 10, 120, 20);
+		contentPane.add(bandsComboBox);
 	}
 }
