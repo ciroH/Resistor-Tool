@@ -30,7 +30,7 @@ public class Start extends JFrame{
 	public Start() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBackground(Color.GRAY);
-		setBounds(0,0,800,600);
+		setBounds(0,0,400,300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
