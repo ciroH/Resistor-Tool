@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GraphicsEnvironment;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.awt.Color;
 import javax.swing.JComboBox;
 
@@ -38,9 +40,19 @@ public class Start extends JFrame{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		ArrayList<String> comboBoxOptions = new ArrayList<>();
+		comboBoxOptions.add("3 Bands");
+		comboBoxOptions.add("4 Bands");
+		comboBoxOptions.add("5 Bands");
+		comboBoxOptions.add("6 Bands");
+		
 		JComboBox bandsComboBox = new JComboBox();
 		bandsComboBox.setBackground(Color.LIGHT_GRAY);
 		bandsComboBox.setBounds(20, 10, 120, 20);
+		for (int i = 0; i < comboBoxOptions.size(); i++) {
+			bandsComboBox.addItem(comboBoxOptions.get(i));	
+		}
+		bandsComboBox.setSelectedIndex(1);
 		contentPane.add(bandsComboBox);
 	}
 }
