@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GraphicsEnvironment;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.awt.Color;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
@@ -33,14 +32,23 @@ public class Start extends JFrame{
 	}
 	
 	public Start() {
+		setTitle("Resistor-Tool");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBackground(Color.GRAY);
 		setBounds(0,0,240,300);
+		setLocationRelativeTo(null);
+		
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JPanel ResistorPane = new JPanel();
+		ResistorPane.setBackground(new Color(210, 180, 140));
+		ResistorPane.setBounds(50, 83, 140, 25);
+		contentPane.add(ResistorPane);
+		ResistorPane.setLayout(null);
 		
 		ArrayList<String> comboBoxOptions = new ArrayList<>();
 		comboBoxOptions.add("3 Bands");
@@ -62,11 +70,7 @@ public class Start extends JFrame{
 		});
 		
 		contentPane.add(bandsComboBox);
-		
-		JPanel ResistorPane = new JPanel();
-		ResistorPane.setBackground(new Color(210, 180, 140));
-		ResistorPane.setBounds(50, 83, 140, 25);
-		contentPane.add(ResistorPane);
+
 	}
 	
 	private void ArrangeUI(String numberOfBands) {
