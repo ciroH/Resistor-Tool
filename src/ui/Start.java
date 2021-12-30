@@ -51,21 +51,21 @@ public class Start extends JFrame{
 		contentPane.add(ResistorPaneMid);
 		ResistorPaneMid.setLayout(null);
 		
-		JButton btnNewButton_2 = new JButton("");
-		btnNewButton_2.setBounds(15, 0, 10, 25);
-		ResistorPaneMid.add(btnNewButton_2);
+		JButton digit2Button = new JButton("");
+		digit2Button.setBounds(15, 0, 10, 25);
+		ResistorPaneMid.add(digit2Button);
 		
-		JButton btnNewButton_2_1 = new JButton("");
-		btnNewButton_2_1.setBounds(33, 0, 10, 25);
-		ResistorPaneMid.add(btnNewButton_2_1);
+		JButton digit3Button = new JButton("");
+		digit3Button.setBounds(33, 0, 10, 25);
+		ResistorPaneMid.add(digit3Button);
 		
-		JButton btnNewButton_2_2 = new JButton("");
-		btnNewButton_2_2.setBounds(50, 0, 10, 25);
-		ResistorPaneMid.add(btnNewButton_2_2);
+		JButton multiplierButton = new JButton("");
+		multiplierButton.setBounds(50, 0, 10, 25);
+		ResistorPaneMid.add(multiplierButton);
 		
-		JButton btnNewButton_2_3 = new JButton("");
-		btnNewButton_2_3.setBounds(75, 0, 10, 25);
-		ResistorPaneMid.add(btnNewButton_2_3);
+		JButton toleranceButton = new JButton("");
+		toleranceButton.setBounds(75, 0, 10, 25);
+		ResistorPaneMid.add(toleranceButton);
 		
 		ArrayList<String> comboBoxOptions = new ArrayList<>();
 		comboBoxOptions.add("3 Bands");
@@ -94,9 +94,9 @@ public class Start extends JFrame{
 		ResistorPaneFirst.setBounds(50, 81, 20, 29);
 		contentPane.add(ResistorPaneFirst);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setBounds(5, 0, 10, 29);
-		ResistorPaneFirst.add(btnNewButton);
+		JButton digit1Button = new JButton("");
+		digit1Button.setBounds(5, 0, 10, 29);
+		ResistorPaneFirst.add(digit1Button);
 		
 		JPanel ResistorPaneLast = new JPanel();
 		ResistorPaneLast.setLayout(null);
@@ -104,9 +104,9 @@ public class Start extends JFrame{
 		ResistorPaneLast.setBounds(170, 81, 20, 29);
 		contentPane.add(ResistorPaneLast);
 		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setBounds(5, 0, 10, 29);
-		ResistorPaneLast.add(btnNewButton_1);
+		JButton tempCoeffButton = new JButton("");
+		tempCoeffButton.setBounds(5, 0, 10, 29);
+		ResistorPaneLast.add(tempCoeffButton);
 
 	}
 	
