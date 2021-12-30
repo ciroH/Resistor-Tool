@@ -44,11 +44,11 @@ public class Start extends JFrame{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel ResistorPane = new JPanel();
-		ResistorPane.setBackground(new Color(210, 180, 140));
-		ResistorPane.setBounds(50, 83, 140, 25);
-		contentPane.add(ResistorPane);
-		ResistorPane.setLayout(null);
+		JPanel ResistorPaneMid = new JPanel();
+		ResistorPaneMid.setBackground(new Color(210, 180, 140));
+		ResistorPaneMid.setBounds(70, 83, 100, 25);
+		contentPane.add(ResistorPaneMid);
+		ResistorPaneMid.setLayout(null);
 		
 		ArrayList<String> comboBoxOptions = new ArrayList<>();
 		comboBoxOptions.add("3 Bands");
@@ -70,6 +70,18 @@ public class Start extends JFrame{
 		});
 		
 		contentPane.add(bandsComboBox);
+		
+		JPanel ResistorPaneFirst = new JPanel();
+		ResistorPaneFirst.setLayout(null);
+		ResistorPaneFirst.setBackground(new Color(210, 180, 140));
+		ResistorPaneFirst.setBounds(50, 81, 20, 29);
+		contentPane.add(ResistorPaneFirst);
+		
+		JPanel ResistorPaneLast = new JPanel();
+		ResistorPaneLast.setLayout(null);
+		ResistorPaneLast.setBackground(new Color(210, 180, 140));
+		ResistorPaneLast.setBounds(170, 81, 20, 29);
+		contentPane.add(ResistorPaneLast);
 
 	}
 	
