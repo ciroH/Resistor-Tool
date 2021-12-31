@@ -3,6 +3,9 @@ package ui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logic.ResistorObject;
+
 import java.awt.GraphicsEnvironment;
 import java.util.ArrayList;
 import java.awt.Color;
@@ -110,6 +113,12 @@ public class Start extends JFrame{
 
 	}
 	
+	public String ShowColorSelection(int bandNumber) {
+		
+		
+	return "";}
+	
+
 	private void ArrangeUI(String numberOfBands) {
 		
 	}
