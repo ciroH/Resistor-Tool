@@ -118,7 +118,12 @@ public class Start extends JFrame{
 		
 	return "";}
 	
-
+	private String MeasureResistorProperties(String digit1Color, String digit2Color, String digit3Color, String multiplierColor, String toleranceColor, String tempCoeffColor){
+		ResistorObject resistor = new ResistorObject();
+		String resistorInfo = new String();
+		
+	return resistorInfo;}
+	
 	private void ArrangeUI(String numberOfBands) {
 		
 	}
