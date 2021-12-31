@@ -56,18 +56,34 @@ public class Start extends JFrame{
 		ResistorPaneMid.setLayout(null);
 		
 		JButton digit2Button = new JButton("");
+		digit2Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		digit2Button.setBounds(7, 0, 10, 25);
 		ResistorPaneMid.add(digit2Button);
 		
 		JButton digit3Button = new JButton("");
+		digit3Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		digit3Button.setBounds(27, 0, 10, 25);
 		ResistorPaneMid.add(digit3Button);
 		
 		JButton multiplierButton = new JButton("");
+		multiplierButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		multiplierButton.setBounds(50, 0, 10, 25);
 		ResistorPaneMid.add(multiplierButton);
 		
 		JButton toleranceButton = new JButton("");
+		toleranceButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		toleranceButton.setBounds(75, 0, 10, 25);
 		ResistorPaneMid.add(toleranceButton);
 		
@@ -99,6 +115,10 @@ public class Start extends JFrame{
 		contentPane.add(ResistorPaneFirst);
 		
 		JButton digit1Button = new JButton("");
+		digit1Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		digit1Button.setBounds(5, 0, 10, 29);
 		ResistorPaneFirst.add(digit1Button);
 		
@@ -109,6 +129,10 @@ public class Start extends JFrame{
 		contentPane.add(ResistorPaneLast);
 		
 		JButton tempCoeffButton = new JButton("");
+		tempCoeffButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		tempCoeffButton.setBounds(5, 0, 10, 29);
 		ResistorPaneLast.add(tempCoeffButton);
 
