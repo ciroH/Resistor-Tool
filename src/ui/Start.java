@@ -1,6 +1,7 @@
 package ui;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -55,11 +56,11 @@ public class Start extends JFrame{
 		ResistorPaneMid.setLayout(null);
 		
 		JButton digit2Button = new JButton("");
-		digit2Button.setBounds(15, 0, 10, 25);
+		digit2Button.setBounds(7, 0, 10, 25);
 		ResistorPaneMid.add(digit2Button);
 		
 		JButton digit3Button = new JButton("");
-		digit3Button.setBounds(33, 0, 10, 25);
+		digit3Button.setBounds(27, 0, 10, 25);
 		ResistorPaneMid.add(digit3Button);
 		
 		JButton multiplierButton = new JButton("");
@@ -114,14 +115,13 @@ public class Start extends JFrame{
 	}
 	
 	public String ShowColorSelection(int bandNumber) {
-		
-		
+
 	return "";}
 	
 	private String MeasureResistorProperties(String digit1Color, String digit2Color, String digit3Color, String multiplierColor, String toleranceColor, String tempCoeffColor){
 		ResistorObject resistor = new ResistorObject();
 		String resistorInfo = new String();
-		
+		//calls logic.Processing to measure resistor
 	return resistorInfo;}
 	
 	private void ArrangeUI(String numberOfBands) {
