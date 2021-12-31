@@ -135,6 +135,22 @@ public class Start extends JFrame{
 		});
 		tempCoeffButton.setBounds(5, 0, 10, 29);
 		ResistorPaneLast.add(tempCoeffButton);
+		
+		JButton refreshButton = new JButton("");
+		refreshButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		refreshButton.setBounds(70, 136, 32, 32);
+		contentPane.add(refreshButton);
+		
+		JButton processButton = new JButton("");
+		processButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		processButton.setBounds(125, 136, 32, 32);
+		contentPane.add(processButton);
 
 	}
 	
