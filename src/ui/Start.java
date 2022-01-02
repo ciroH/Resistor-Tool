@@ -13,6 +13,9 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Start extends JFrame{
@@ -143,6 +146,8 @@ public class Start extends JFrame{
 		});
 		refreshButton.setBounds(70, 136, 32, 32);
 		contentPane.add(refreshButton);
+		 Icon refreshIcon = new ImageIcon("res/refreshIcon.png");
+		 refreshButton.setIcon(refreshIcon);
 		
 		JButton processButton = new JButton("");
 		processButton.addActionListener(new ActionListener() {
@@ -151,6 +156,9 @@ public class Start extends JFrame{
 		});
 		processButton.setBounds(125, 136, 32, 32);
 		contentPane.add(processButton);
+		Icon processIcon = new ImageIcon("res/processIcon.png");
+		processButton.setIcon(processIcon);
+		
 
 	}
 	
