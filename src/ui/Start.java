@@ -177,6 +177,35 @@ public class Start extends JFrame{
 	return resistorInfo;}
 	
 	private void ArrangeUI(String numberOfBands) {
+		switch (numberOfBands) {
+		case "3 Bands":
+			showMinBands();
+			break;
+		case "4 Bands":
+			showMinBands();
+			
+			break;
+
+		case "5 Bands":
+			showMinBands();
+			
+			
+			break;
+		case "6 Bands":
+			showMinBands();
+			
+			
+			
+			break;
+
+		default:
+			break;
+		}
+	}
+	
+	public void showMinBands() {
+		
 		
 	}
+	
 }
