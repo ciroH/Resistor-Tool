@@ -187,24 +187,18 @@ public class Start extends JFrame{
 		case "3 Bands":
 			clearBandsColor();
 			setVisibleMinBands(true);
-			toleranceButton.setVisible(false);
-			tempCoeffButton.setVisible(false);
-			digit3Button.setVisible(false);
+			setVisibleExtraBands(false,false,false);
 			break;
 		case "4 Bands":
 			clearBandsColor();
 			setVisibleMinBands(true);
-			toleranceButton.setVisible(true);
-			tempCoeffButton.setVisible(false);
-			digit3Button.setVisible(false);
+			setVisibleExtraBands(true,false,false);
 			break;
 
 		case "5 Bands":
 			clearBandsColor();
 			setVisibleMinBands(true);
-			toleranceButton.setVisible(true);
-			tempCoeffButton.setVisible(true);
-			digit3Button.setVisible(false);
+			setVisibleExtraBands(true,true,false);
 			break;
 		case "6 Bands":
 			clearBandsColor();
