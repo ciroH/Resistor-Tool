@@ -30,7 +30,7 @@ public class Start extends JFrame{
 	public static void main(String[] args) {
 		int width = getScreenWidth();
 		int height = getScreenHeight();
-		int numberOfBands = 4;
+		int numberOfBands = 4;	//used when calling logic.Processing
 		ArrayList<String> selectedBandsList = new ArrayList<>();// band == position +1
 		System.out.println(width+"x"+height);
 		Start userInterface = new Start();
@@ -114,6 +114,14 @@ public class Start extends JFrame{
 		bandsComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ArrangeUI(bandsComboBox.getSelectedItem().toString());
+				switch (bandsComboBox.getSelectedItem().toString()) {
+				case "3 Bands":
+					
+					break;
+
+				default:
+					break;
+				}
 			}
 		});
 		
@@ -167,7 +175,7 @@ public class Start extends JFrame{
 		Icon processIcon = new ImageIcon("res/processIcon.png");
 		processButton.setIcon(processIcon);
 		
-
+		ArrangeUI("4 Bands");
 	}
 	
 	public String ShowColorSelection(int bandNumber) {
@@ -179,7 +187,16 @@ public class Start extends JFrame{
 	private String MeasureResistorProperties(String digit1Color, String digit2Color, String digit3Color, String multiplierColor, String toleranceColor, String tempCoeffColor){
 		ResistorObject resistor = new ResistorObject();
 		String resistorInfo = new String();
-		//calls logic.Processing to measure resistor
+		//if calls logic.Processing to measure resistor, sends numberOfBands value
+		if (toleranceColor == null) {
+			//numberOfBands = 3;
+		} else if(digit3Color == null){
+			//numberOfBands = 4;
+		} else if(tempCoeffColor == null){
+			//numberOfBands = 5;
+		} else {
+			//numberOfBands = 6;
+		}
 	return resistorInfo;}
 	
 	private void ArrangeUI(String numberOfBands) {
@@ -207,6 +224,9 @@ public class Start extends JFrame{
 			break;
 
 		default:
+			clearBandsColor();
+			setVisibleMinBands(true);
+			setVisibleExtraBands(true,false,false);
 			break;
 		}
 	}
@@ -217,10 +237,10 @@ public class Start extends JFrame{
 		multiplierButton.setVisible(state);
 	}
 
-	public void setVisibleExtraBands(boolean toleranceBandState, boolean tempCoeffBandState, boolean digit3BandState) {
+	public void setVisibleExtraBands(boolean toleranceBandState, boolean digit3BandState, boolean tempCoeffBandState) {
 		toleranceButton.setVisible(toleranceBandState);
-		tempCoeffButton.setVisible(tempCoeffBandState);
 		digit3Button.setVisible(digit3BandState);
+		tempCoeffButton.setVisible(tempCoeffBandState);
 	}
 	
 	public void clearBandsColor() {
@@ -230,11 +250,6 @@ public class Start extends JFrame{
 	toleranceButton.setBackground(null);
 	tempCoeffButton.setBackground(null);
 	digit3Button.setBackground(null);
-	}
-	
-	public void hideBands() {
-		
-		
 	}
 
 }
