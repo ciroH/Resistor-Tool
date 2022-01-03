@@ -236,23 +236,5 @@ public class Start extends JFrame{
 		
 		
 	}
-	
-	public JButton getDigit1Button() {
-		return digit1Button;
-	}
-	public JButton getTempCoeffButton() {
-		return tempCoeffButton;
-	}
-	public JButton getDigit3Button() {
-		return digit3Button;
-	}
-	public JButton getToleranceButton() {
-		return toleranceButton;
-	}
-	public JButton getMultiplierButton() {
-		return multiplierButton;
-	}
-	public JButton getDigit2Button() {
-		return digit2Button;
-	}
+
 }
