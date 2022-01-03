@@ -21,6 +21,12 @@ import javax.swing.JButton;
 public class Start extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JButton digit1Button;
+	private JButton tempCoeffButton;
+	private JButton digit3Button;
+	private JButton toleranceButton;
+	private JButton multiplierButton;
+	private JButton digit2Button;
 	public static void main(String[] args) {
 		int width = getScreenWidth();
 		int height = getScreenHeight();
@@ -60,7 +66,7 @@ public class Start extends JFrame{
 		contentPane.add(ResistorPaneMid);
 		ResistorPaneMid.setLayout(null);
 		
-		JButton digit2Button = new JButton("");
+		digit2Button = new JButton("");
 		digit2Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -68,7 +74,7 @@ public class Start extends JFrame{
 		digit2Button.setBounds(7, 0, 10, 25);
 		ResistorPaneMid.add(digit2Button);
 		
-		JButton digit3Button = new JButton("");
+		digit3Button = new JButton("");
 		digit3Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -76,7 +82,7 @@ public class Start extends JFrame{
 		digit3Button.setBounds(27, 0, 10, 25);
 		ResistorPaneMid.add(digit3Button);
 		
-		JButton multiplierButton = new JButton("");
+		multiplierButton = new JButton("");
 		multiplierButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -84,7 +90,7 @@ public class Start extends JFrame{
 		multiplierButton.setBounds(50, 0, 10, 25);
 		ResistorPaneMid.add(multiplierButton);
 		
-		JButton toleranceButton = new JButton("");
+		toleranceButton = new JButton("");
 		toleranceButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -119,7 +125,7 @@ public class Start extends JFrame{
 		ResistorPaneFirst.setBounds(50, 81, 20, 29);
 		contentPane.add(ResistorPaneFirst);
 		
-		JButton digit1Button = new JButton("");
+		digit1Button = new JButton("");
 		digit1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -133,7 +139,7 @@ public class Start extends JFrame{
 		ResistorPaneLast.setBounds(170, 81, 20, 29);
 		contentPane.add(ResistorPaneLast);
 		
-		JButton tempCoeffButton = new JButton("");
+		tempCoeffButton = new JButton("");
 		tempCoeffButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -179,23 +185,31 @@ public class Start extends JFrame{
 	private void ArrangeUI(String numberOfBands) {
 		switch (numberOfBands) {
 		case "3 Bands":
-			showMinBands();
+			clearBandsColor();
+			setVisibleMinBands(true);
+			toleranceButton.setVisible(false);
+			tempCoeffButton.setVisible(false);
+			digit3Button.setVisible(false);
 			break;
 		case "4 Bands":
-			showMinBands();
-			
+			clearBandsColor();
+			setVisibleMinBands(true);
+			toleranceButton.setVisible(true);
+			tempCoeffButton.setVisible(false);
+			digit3Button.setVisible(false);
 			break;
 
 		case "5 Bands":
-			showMinBands();
-			
-			
+			clearBandsColor();
+			setVisibleMinBands(true);
+			toleranceButton.setVisible(true);
+			tempCoeffButton.setVisible(true);
+			digit3Button.setVisible(false);
 			break;
 		case "6 Bands":
-			showMinBands();
-			
-			
-			
+			clearBandsColor();
+			setVisibleMinBands(true);
+			setVisibleExtraBands(true,true,true);
 			break;
 
 		default:
@@ -203,9 +217,48 @@ public class Start extends JFrame{
 		}
 	}
 	
-	public void showMinBands() {
+	public void setVisibleMinBands(boolean state) {
+		digit1Button.setVisible(state);
+		digit2Button.setVisible(state);
+		multiplierButton.setVisible(state);
+	}
+
+	public void setVisibleExtraBands(boolean toleranceBandState, boolean tempCoeffBandState, boolean digit3BandState) {
+		toleranceButton.setVisible(toleranceBandState);
+		tempCoeffButton.setVisible(tempCoeffBandState);
+		digit3Button.setVisible(digit3BandState);
+	}
+	
+	public void clearBandsColor() {
+	digit1Button.setBackground(null);
+	digit2Button.setBackground(null);	
+	digit3Button.setBackground(null);	
+	toleranceButton.setBackground(null);
+	tempCoeffButton.setBackground(null);
+	digit3Button.setBackground(null);
+	}
+	
+	public void hideBands() {
 		
 		
 	}
 	
+	public JButton getDigit1Button() {
+		return digit1Button;
+	}
+	public JButton getTempCoeffButton() {
+		return tempCoeffButton;
+	}
+	public JButton getDigit3Button() {
+		return digit3Button;
+	}
+	public JButton getToleranceButton() {
+		return toleranceButton;
+	}
+	public JButton getMultiplierButton() {
+		return multiplierButton;
+	}
+	public JButton getDigit2Button() {
+		return digit2Button;
+	}
 }
