@@ -24,6 +24,8 @@ public class Start extends JFrame{
 	public static void main(String[] args) {
 		int width = getScreenWidth();
 		int height = getScreenHeight();
+		int numberOfBands = 4;
+		ArrayList<String> selectedBandsList = new ArrayList<>();// band == position +1
 		System.out.println(width+"x"+height);
 		Start userInterface = new Start();
 		userInterface.setVisible(true);
@@ -39,7 +41,7 @@ public class Start extends JFrame{
 		return width;
 	}
 	
-	public Start() {
+	public Start() {		
 		setTitle("Resistor-Tool");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBackground(Color.GRAY);
@@ -164,6 +166,8 @@ public class Start extends JFrame{
 	
 	public String ShowColorSelection(int bandNumber) {
 
+		
+		
 	return "";}
 	
 	private String MeasureResistorProperties(String digit1Color, String digit2Color, String digit3Color, String multiplierColor, String toleranceColor, String tempCoeffColor){
