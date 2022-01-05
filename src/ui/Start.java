@@ -137,7 +137,7 @@ public class Start extends JFrame{
 		digit1Button = new JButton("");
 		digit1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ShowColorSelection(0, digit1Button);
+				ShowColorSelection(1, digit1Button);
 			}
 		});
 		digit1Button.setBounds(5, 0, 10, 29);
@@ -190,7 +190,7 @@ public class Start extends JFrame{
 		switch (bandNumber) {
 		case 1:
 			colorList.remove("gold");
-			colorList.remove("silver"); //TODO: [fix] JOptionPane.ShowOptionDialog keeps showing gold and silver for band 1
+			colorList.remove("silver");
 			break;
 
 		default:
