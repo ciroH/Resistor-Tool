@@ -9,6 +9,7 @@ import logic.ResistorObject;
 
 import java.awt.GraphicsEnvironment;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.awt.Color;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
@@ -136,6 +137,7 @@ public class Start extends JFrame{
 		digit1Button = new JButton("");
 		digit1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ShowColorSelection(0, digit1Button);
 			}
 		});
 		digit1Button.setBounds(5, 0, 10, 29);
@@ -178,8 +180,24 @@ public class Start extends JFrame{
 		ArrangeUI("4 Bands");
 	}
 	
-	public String ShowColorSelection(int bandNumber) {
+	public String ShowColorSelection(int bandNumber, JButton parentComponent) {
+		String[] colorArray = new String[] {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
+		ArrayList<String> colorList = new ArrayList<>();
+		for (int i = 0; i < colorArray.length; i++) {
+			colorList.add(colorArray[i]);
+		}
+		//JButton[] colorButtons = new JButton[0];  will need to create mutiple JButtons and change their colors whenever i improve the JOptionpane.ShowOptionDialog's appearance
+		switch (bandNumber) {
+		case 1:
+			colorList.remove("gold");
+			colorList.remove("silver"); //TODO: [fix] JOptionPane.ShowOptionDialog keeps showing gold and silver for band 1
+			break;
 
+		default:
+			break;
+		}
+
+		JOptionPane.showOptionDialog(parentComponent, "Select a Color", "Color Selector", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, colorList.toArray(), colorList.get(0));
 		
 		
 	return "";}
