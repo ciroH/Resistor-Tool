@@ -189,13 +189,7 @@ public class Start extends JFrame{
 		//JButton[] colorButtons = new JButton[0];  will need to create mutiple JButtons and change their colors whenever i improve the JOptionpane.ShowOptionDialog's appearance
 		switch (bandNumber) {
 		case 1:	//digit 1
-			colorList.remove("gold");
-			colorList.remove("silver");
-			break;
 		case 2:	//digit 2
-			colorList.remove("gold");
-			colorList.remove("silver");
-			break;
 		case 3:	//digit 3
 			colorList.remove("gold");
 			colorList.remove("silver");
