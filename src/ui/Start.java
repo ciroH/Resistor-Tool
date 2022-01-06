@@ -28,11 +28,12 @@ public class Start extends JFrame{
 	private JButton toleranceButton;
 	private JButton multiplierButton;
 	private JButton digit2Button;
+	ArrayList<String> selectedBandsList = new ArrayList<>();// numberOfBands == [0] // band == [1+]
+	String numberOfBands = "4 Bands";	//used when calling logic.Processing
+	
 	public static void main(String[] args) {
 		int width = getScreenWidth();
 		int height = getScreenHeight();
-		int numberOfBands = 4;	//used when calling logic.Processing
-		ArrayList<String> selectedBandsList = new ArrayList<>();// band == position +1
 		System.out.println(width+"x"+height);
 		Start userInterface = new Start();
 		userInterface.setVisible(true);
@@ -54,6 +55,8 @@ public class Start extends JFrame{
 		setBackground(Color.GRAY);
 		setBounds(0,0,240,300);
 		setLocationRelativeTo(null);
+		
+		selectedBandsList.add(0, numberOfBands);
 		
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
@@ -114,9 +117,9 @@ public class Start extends JFrame{
 		bandsComboBox.setSelectedIndex(1);
 		bandsComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ArrangeUI(bandsComboBox.getSelectedItem().toString());
+				arrangeUI(bandsComboBox.getSelectedItem().toString());
 				switch (bandsComboBox.getSelectedItem().toString()) {
-				case "3 Bands":
+				case "3 Bands":	//TODO: change position [0] of selectedBandList and call
 					
 					break;
 
@@ -137,7 +140,7 @@ public class Start extends JFrame{
 		digit1Button = new JButton("");
 		digit1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ShowColorSelection(1, digit1Button);
+				showColorSelector(1, digit1Button);
 			}
 		});
 		digit1Button.setBounds(5, 0, 10, 29);
@@ -177,12 +180,13 @@ public class Start extends JFrame{
 		Icon processIcon = new ImageIcon("res/processIcon.png");
 		processButton.setIcon(processIcon);
 		
-		ArrangeUI("4 Bands");
+		arrangeUI("4 Bands");
 	}
 	
-	public String ShowColorSelection(int bandNumber, JButton parentComponent) {
+	public String showColorSelector(int bandNumber, JButton parentComponent) {
 		String[] colorArray = new String[] {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
 		ArrayList<String> colorList = new ArrayList<>();
+		String selectedColor = new String();
 		for (int i = 0; i < colorArray.length; i++) {
 			colorList.add(colorArray[i]);
 		}
@@ -212,10 +216,9 @@ public class Start extends JFrame{
 			break;
 		}
 
-		JOptionPane.showOptionDialog(parentComponent, "Select a Color", "Color Selector", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, colorList.toArray(), colorList.get(0));
+		selectedColor = colorList.get(JOptionPane.showOptionDialog(parentComponent, "Select a Color", "Color Selector", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, colorList.toArray(), colorList.get(0)));
 		
-		
-	return "";}
+	return selectedColor;}
 	
 	private String MeasureResistorProperties(String digit1Color, String digit2Color, String digit3Color, String multiplierColor, String toleranceColor, String tempCoeffColor){
 		ResistorObject resistor = new ResistorObject();
@@ -232,7 +235,7 @@ public class Start extends JFrame{
 		}
 	return resistorInfo;}
 	
-	private void ArrangeUI(String numberOfBands) {
+	private void arrangeUI(String numberOfBands) {
 		switch (numberOfBands) {
 		case "3 Bands":
 			clearBandsColor();
@@ -283,6 +286,7 @@ public class Start extends JFrame{
 	toleranceButton.setBackground(null);
 	tempCoeffButton.setBackground(null);
 	digit3Button.setBackground(null);
+	//TODO: create a method that clears selectedBandsList and sets [0] to the new number of bands depending on the JComboBox selection
 	}
 
 }
