@@ -192,7 +192,14 @@ public class Start extends JFrame{
 			colorList.remove("gold");
 			colorList.remove("silver");
 			break;
-
+		case 2:
+			colorList.remove("gold");
+			colorList.remove("silver");
+			break;
+		case 3:
+			colorList.remove("gold");
+			colorList.remove("silver");
+			break;
 		default:
 			break;
 		}
