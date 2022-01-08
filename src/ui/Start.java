@@ -120,16 +120,16 @@ public class Start extends JFrame{
 				arrangeUI(bandsComboBox.getSelectedItem().toString());
 				switch (bandsComboBox.getSelectedItem().toString()) {
 				case "3 Bands":
-					clearBandsList(3);
+					clearSelectedBandsList(3);
 					break;
 				case "4 Bands":
-					clearBandsList(4);
+					clearSelectedBandsList(4);
 					break;
 				case "5 Bands":
-					clearBandsList(5);
+					clearSelectedBandsList(5);
 					break;
 				case "6 Bands":
-					clearBandsList(6);
+					clearSelectedBandsList(6);
 					break;
 				default:
 					break;
@@ -296,7 +296,7 @@ public class Start extends JFrame{
 	digit3Button.setBackground(null);
 	}
 	
-	public void clearBandsList(int numberOfBands) {
+	public void clearSelectedBandsList(int numberOfBands) {
 		selectedBandsList.clear();
 		selectedBandsList.add(0,this.numberOfBands);
 	}
