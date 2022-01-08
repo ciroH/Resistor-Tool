@@ -293,7 +293,7 @@ public class Start extends JFrame{
 	digit3Button.setBackground(null);	
 	toleranceButton.setBackground(null);
 	tempCoeffButton.setBackground(null);
-	digit3Button.setBackground(null);
+	multiplierButton.setBackground(null);
 	}
 	
 	public void clearSelectedBandsList(int numberOfBands) {
