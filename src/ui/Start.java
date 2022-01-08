@@ -119,10 +119,18 @@ public class Start extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				arrangeUI(bandsComboBox.getSelectedItem().toString());
 				switch (bandsComboBox.getSelectedItem().toString()) {
-				case "3 Bands":	//TODO: call a new method that changes position [0] of selectedBandList and clears the rest of positions.
-								//		also call arrangeUI()
+				case "3 Bands":
+					clearBandsList(3);
 					break;
-
+				case "4 Bands":
+					clearBandsList(4);
+					break;
+				case "5 Bands":
+					clearBandsList(5);
+					break;
+				case "6 Bands":
+					clearBandsList(6);
+					break;
 				default:
 					break;
 				}
@@ -286,7 +294,6 @@ public class Start extends JFrame{
 	toleranceButton.setBackground(null);
 	tempCoeffButton.setBackground(null);
 	digit3Button.setBackground(null);
-	//TODO: create a method that clears selectedBandsList and sets [0] to the new number of bands depending on the JComboBox selection
 	}
 	
 	public void clearBandsList(int numberOfBands) {
