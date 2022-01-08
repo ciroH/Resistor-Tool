@@ -119,8 +119,8 @@ public class Start extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				arrangeUI(bandsComboBox.getSelectedItem().toString());
 				switch (bandsComboBox.getSelectedItem().toString()) {
-				case "3 Bands":	//TODO: change position [0] of selectedBandList and call
-					
+				case "3 Bands":	//TODO: call a new method that changes position [0] of selectedBandList and clears the rest of positions.
+								//		also call arrangeUI()
 					break;
 
 				default:
@@ -288,5 +288,11 @@ public class Start extends JFrame{
 	digit3Button.setBackground(null);
 	//TODO: create a method that clears selectedBandsList and sets [0] to the new number of bands depending on the JComboBox selection
 	}
+	
+	public void clearBandsList(int numberOfBands) {
+		selectedBandsList.clear();
+		selectedBandsList.add(0,this.numberOfBands);
+	}
+	
 
 }
