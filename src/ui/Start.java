@@ -132,6 +132,7 @@ public class Start extends JFrame{
 					clearSelectedBandsList(6);
 					break;
 				default:
+					clearSelectedBandsList(4);
 					break;
 				}
 			}
@@ -275,19 +276,19 @@ public class Start extends JFrame{
 		}
 	}
 	
-	public void setVisibleMinBands(boolean state) {
+	private void setVisibleMinBands(boolean state) {
 		digit1Button.setVisible(state);
 		digit2Button.setVisible(state);
 		multiplierButton.setVisible(state);
 	}
 
-	public void setVisibleExtraBands(boolean toleranceBandState, boolean digit3BandState, boolean tempCoeffBandState) {
+	private void setVisibleExtraBands(boolean toleranceBandState, boolean digit3BandState, boolean tempCoeffBandState) {
 		toleranceButton.setVisible(toleranceBandState);
 		digit3Button.setVisible(digit3BandState);
 		tempCoeffButton.setVisible(tempCoeffBandState);
 	}
 	
-	public void clearBandsColor() {
+	private void clearBandsColor() {
 	digit1Button.setBackground(null);
 	digit2Button.setBackground(null);	
 	digit3Button.setBackground(null);	
@@ -296,10 +297,14 @@ public class Start extends JFrame{
 	multiplierButton.setBackground(null);
 	}
 	
-	public void clearSelectedBandsList(int numberOfBands) {
+	private void clearSelectedBandsList(int numberOfBands) {
 		selectedBandsList.clear();
 		selectedBandsList.add(0,this.numberOfBands);
 	}
 	
-
+	//TODO: create method paintButton(JButton buttonToPaint,String color), and finish writing ActionListener of band's JButton
+	//TODO: add Exception handler to JOptionPane
+	//TODO: finish MeasureResistorProperties
+	//TODO: create JPanel for showing results
+	//TODO: finish writing ActionListener for refresh and process JButtons
 }
