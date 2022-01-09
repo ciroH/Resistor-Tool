@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import logic.ResistorObject;
 
 import java.awt.GraphicsEnvironment;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.awt.Color;
@@ -172,6 +173,7 @@ public class Start extends JFrame{
 		JButton refreshButton = new JButton("");
 		refreshButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		refreshButton.setBounds(70, 136, 32, 32);
@@ -199,7 +201,9 @@ public class Start extends JFrame{
 		for (int i = 0; i < colorArray.length; i++) {
 			colorList.add(colorArray[i]);
 		}
-		//JButton[] colorButtons = new JButton[0];  will need to create mutiple JButtons and change their colors whenever i improve the JOptionpane.ShowOptionDialog's appearance
+		//	JButton[] colorButtons = new JButton[0];  will need to create mutiple JButtons and change their colors whenever i improve the JOptionpane.ShowOptionDialog's appearance
+		
+		//Creating a static int representing every band would be a good thing to add more readability and context (static int DIGIT1 = 1;)
 		switch (bandNumber) {
 		case 1:	//digit 1
 		case 2:	//digit 2
@@ -225,9 +229,13 @@ public class Start extends JFrame{
 			break;
 		}
 
-		selectedColor = colorList.get(JOptionPane.showOptionDialog(parentComponent, "Select a Color", "Color Selector", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, colorList.toArray(), colorList.get(0)));
+		try {
+			selectedColor = colorList.get(JOptionPane.showOptionDialog(parentComponent, "Select a Color", "Color Selector", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, colorList.toArray(), colorList.get(0)));
+		} catch (IndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
 		
-	return selectedColor;}
+	return selectedColor;} //if showColorSelection.isEmpty {/*do nothing*/} else paint the band JButton that calls this method
 	
 	private String MeasureResistorProperties(String digit1Color, String digit2Color, String digit3Color, String multiplierColor, String toleranceColor, String tempCoeffColor){
 		ResistorObject resistor = new ResistorObject();
@@ -306,5 +314,6 @@ public class Start extends JFrame{
 	//TODO: add Exception handler to JOptionPane
 	//TODO: finish MeasureResistorProperties
 	//TODO: create JPanel for showing results
-	//TODO: finish writing ActionListener for refresh and process JButtons
+	//TODO: check if system is headless
+	//TODO: finish writing ActionListener for refresh and process JButtons. Extract switch from JcomboBox's ActionListener and integrate it into clearSelectedBandsList, to use it in the refresh JButton ActionListener
 }
