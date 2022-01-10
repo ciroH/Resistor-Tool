@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.border.BevelBorder;
 
 public class Start extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -32,6 +33,7 @@ public class Start extends JFrame{
 	private JButton digit2Button;
 	ArrayList<String> selectedBandsList = new ArrayList<>();// numberOfBands == [0] // band == [1+]
 	String numberOfBands = "4 Bands";	//used when calling logic.Processing
+	private JPanel ResultsPane;
 	
 	public static void main(String[] args) {
 		int width = getScreenWidth();
@@ -194,6 +196,13 @@ public class Start extends JFrame{
 		contentPane.add(processButton);
 		Icon processIcon = new ImageIcon("res/processIcon.png");
 		processButton.setIcon(processIcon);
+		
+		ResultsPane = new JPanel();
+		ResultsPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		ResultsPane.setBackground(Color.GRAY);
+		ResultsPane.setBounds(12, 180, 208, 80);
+		contentPane.add(ResultsPane);
+		ResultsPane.setLayout(null);
 		
 		arrangeUI("4 Bands");
 	}
