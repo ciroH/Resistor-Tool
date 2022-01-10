@@ -326,8 +326,47 @@ public class Start extends JFrame{
 	}
 	
 	private void paintButton(JButton buttonToPaint, String color) {
-		if (color != null) {
-		//	buttonToPaint.paint(color);
+		if (color != null && !color.isEmpty()) {
+		switch (color) {
+		case "black":
+			
+			break;
+		case "brown":
+			
+			break;
+		case "red":
+		
+		break;
+		case "orange":
+		
+		break;
+		case "yellow":
+		
+		break;
+		case "green":
+		
+		break;
+		case "blue":
+		
+		break;
+		case "violet":
+		
+		break;
+		case "grey":
+		
+		break;
+		case "white":
+		
+		break;
+		case "gold":
+		
+		break;
+		case "silver":
+			
+			break;
+		default:
+			break;
+		}
 		}
 	}
 	
