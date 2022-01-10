@@ -150,7 +150,9 @@ public class Start extends JFrame{
 		digit1Button = new JButton("");
 		digit1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				showColorSelector(1, digit1Button);
+				String color = new String();
+				color = showColorSelector(1, digit1Button);
+				paintButton(digit1Button, color);
 			}
 		});
 		digit1Button.setBounds(5, 0, 10, 29);
@@ -308,6 +310,12 @@ public class Start extends JFrame{
 	private void clearSelectedBandsList(int numberOfBands) {
 		selectedBandsList.clear();
 		selectedBandsList.add(0,this.numberOfBands);
+	}
+	
+	private void paintButton(JButton buttonToPaint, String color) {
+		if (color != null) {
+		//	buttonToPaint.paint(color);
+		}
 	}
 	
 	//TODO: create method paintButton(JButton buttonToPaint,String color), and finish writing ActionListener of band's JButton
