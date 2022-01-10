@@ -311,7 +311,6 @@ public class Start extends JFrame{
 	}
 	
 	//TODO: create method paintButton(JButton buttonToPaint,String color), and finish writing ActionListener of band's JButton
-	//TODO: add Exception handler to JOptionPane
 	//TODO: finish MeasureResistorProperties
 	//TODO: create JPanel for showing results
 	//TODO: check if system is headless
