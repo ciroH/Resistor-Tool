@@ -12,6 +12,7 @@ import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.awt.Color;
+import java.awt.GraphicsEnvironment;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -50,7 +51,8 @@ public class Start extends JFrame{
 		return width;
 	}
 	
-	public Start() {		
+	public Start() {
+		checkHeadless();
 		setTitle("Resistor-Tool");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBackground(Color.GRAY);
@@ -290,6 +292,13 @@ public class Start extends JFrame{
 		}
 	}
 	
+	private void checkHeadless() {
+		if (GraphicsEnvironment.isHeadless()) {
+			System.out.println("This system does not have an accesible graphics environment");
+			System.exit(0);
+		}
+	}
+	
 	private void setVisibleMinBands(boolean state) {
 		digit1Button.setVisible(state);
 		digit2Button.setVisible(state);
@@ -325,6 +334,5 @@ public class Start extends JFrame{
 	//TODO: create method paintButton(JButton buttonToPaint,String color), and finish writing ActionListener of band's JButton
 	//TODO: finish MeasureResistorProperties
 	//TODO: create JPanel for showing results
-	//TODO: check if system is headless
 	//TODO: finish writing ActionListener for refresh and process JButtons. Extract switch from JcomboBox's ActionListener and integrate it into clearSelectedBandsList, to use it in the refresh JButton ActionListener
 }
