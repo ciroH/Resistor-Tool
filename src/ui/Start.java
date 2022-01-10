@@ -200,6 +200,7 @@ public class Start extends JFrame{
 		String[] colorArray = new String[] {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
 		ArrayList<String> colorList = new ArrayList<>();
 		String selectedColor = new String();
+		int selectedOption;
 		for (int i = 0; i < colorArray.length; i++) {
 			colorList.add(colorArray[i]);
 		}
@@ -232,7 +233,10 @@ public class Start extends JFrame{
 		}
 
 		try {
-			selectedColor = colorList.get(JOptionPane.showOptionDialog(parentComponent, "Select a Color", "Color Selector", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, colorList.toArray(), colorList.get(0)));
+			selectedOption = JOptionPane.showOptionDialog(parentComponent, "Select a Color", "Color Selector", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, colorList.toArray(), colorList.get(0));
+			if (selectedOption != JOptionPane.CLOSED_OPTION) {
+				selectedColor = colorList.get(selectedOption);
+			}
 		} catch (IndexOutOfBoundsException e) {
 			e.printStackTrace();
 		}
