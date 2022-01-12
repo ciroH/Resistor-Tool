@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.ColorUIResource;
+import javax.swing.text.AttributeSet.ColorAttribute;
 
 import logic.ResistorObject;
 
@@ -334,48 +336,51 @@ public class Start extends JFrame{
 		selectedBandsList.add(0,this.numberOfBands);
 	}
 	
-	private void paintButton(JButton buttonToPaint, String color) {
-		if (color != null && !color.isEmpty()) {
-		switch (color) {
+	private void paintButton(JButton buttonToPaint, String colorName) {
+		if (colorName != null && !colorName.isEmpty()) {
+		Color color = new Color(0,0,0);
+		switch (colorName) {
 		case "black":
-			
+			color = new Color(0,0,0);
 			break;
 		case "brown":
-			
+			color = new Color(51,25,0);
 			break;
 		case "red":
-		
+			color = new Color(255,0,0);
 		break;
 		case "orange":
-		
+			color = new Color(255,128,0);
 		break;
 		case "yellow":
-		
+			color = new Color(255,255,0);
 		break;
 		case "green":
-		
+			color = new Color(0,204,0);
 		break;
 		case "blue":
-		
+			color = new Color(0,0,204);
 		break;
 		case "violet":
-		
+			color = new Color(127,0,255);
 		break;
 		case "grey":
-		
+			color = new Color(128,128,128);
 		break;
 		case "white":
-		
+			color = new Color(255,255,255);
 		break;
 		case "gold":
-		
+			color = new Color(204,204,0);
 		break;
 		case "silver":
-			
+			color = new Color(224,224,224);
 			break;
 		default:
+			color = new Color(0,0,0);
 			break;
 		}
+		buttonToPaint.setBackground(color);
 		}
 	}
 	
