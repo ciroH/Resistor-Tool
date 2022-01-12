@@ -63,7 +63,7 @@ public class Start extends JFrame{
 		setBounds(0,0,240,300);
 		setLocationRelativeTo(null);
 		
-		selectedBandsList.add(0, numberOfBands);
+		clearSelectedBandsList(4);
 		
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
@@ -80,6 +80,11 @@ public class Start extends JFrame{
 		digit2Button = new JButton("");
 		digit2Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String color = new String();
+				color = showColorSelector(2, digit2Button);
+				paintButton(digit2Button, color);
+				selectedBandsList.set(2, color);
+				
 			}
 		});
 		digit2Button.setBounds(7, 0, 10, 25);
@@ -88,6 +93,10 @@ public class Start extends JFrame{
 		digit3Button = new JButton("");
 		digit3Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String color = new String();
+				color = showColorSelector(3, digit3Button);
+				paintButton(digit3Button, color);
+				selectedBandsList.set(3, color);
 			}
 		});
 		digit3Button.setBounds(27, 0, 10, 25);
@@ -96,6 +105,10 @@ public class Start extends JFrame{
 		multiplierButton = new JButton("");
 		multiplierButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String color = new String();
+				color = showColorSelector(4, multiplierButton);
+				paintButton(multiplierButton, color);
+				selectedBandsList.set(4, color);
 			}
 		});
 		multiplierButton.setBounds(50, 0, 10, 25);
@@ -104,6 +117,10 @@ public class Start extends JFrame{
 		toleranceButton = new JButton("");
 		toleranceButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String color = new String();
+				color = showColorSelector(5, toleranceButton);
+				paintButton(toleranceButton, color);
+				selectedBandsList.set(5, color);
 			}
 		});
 		toleranceButton.setBounds(75, 0, 10, 25);
@@ -159,6 +176,7 @@ public class Start extends JFrame{
 				String color = new String();
 				color = showColorSelector(1, digit1Button);
 				paintButton(digit1Button, color);
+				selectedBandsList.set(1, color);
 			}
 		});
 		digit1Button.setBounds(5, 0, 10, 29);
@@ -173,6 +191,10 @@ public class Start extends JFrame{
 		tempCoeffButton = new JButton("");
 		tempCoeffButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String color = new String();
+				color = showColorSelector(6, tempCoeffButton);
+				paintButton(tempCoeffButton, color);
+				selectedBandsList.set(6, color);
 			}
 		});
 		tempCoeffButton.setBounds(5, 0, 10, 29);
@@ -334,6 +356,12 @@ public class Start extends JFrame{
 	private void clearSelectedBandsList(int numberOfBands) {
 		selectedBandsList.clear();
 		selectedBandsList.add(0,this.numberOfBands);
+		selectedBandsList.add(1,"");
+		selectedBandsList.add(2,"");
+		selectedBandsList.add(3,"");
+		selectedBandsList.add(4,"");
+		selectedBandsList.add(5,"");
+		selectedBandsList.add(6,"");
 	}
 	
 	private void paintButton(JButton buttonToPaint, String colorName) {
