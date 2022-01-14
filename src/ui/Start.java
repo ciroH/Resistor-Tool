@@ -141,7 +141,7 @@ public class Start extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				String bandsSelection = new String(bandsComboBox.getSelectedItem().toString());
 				arrangeUI(bandsSelection);
-				clearSelectedBandsList(Integer.parseInt(Character.toString(bandsSelection.charAt(0))));
+				clearSelectedBandsList(bandsSelection);
 				
 			}
 		});
@@ -187,9 +187,9 @@ public class Start extends JFrame{
 		JButton refreshButton = new JButton("");
 		refreshButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String numberOfBands = Character.toString(bandsComboBox.getSelectedItem().toString().charAt(0));
+				String bandsSelection = bandsComboBox.getSelectedItem().toString();
 				clearBandsColor();
-				clearSelectedBandsList(Integer.parseInt(numberOfBands));
+				clearSelectedBandsList(bandsSelection);
 				//clear resultsPane
 				
 			}
@@ -216,7 +216,7 @@ public class Start extends JFrame{
 		contentPane.add(ResultsPane);
 		ResultsPane.setLayout(null);
 		
-		clearSelectedBandsList(4);
+		clearSelectedBandsList("4 Bands");
 		arrangeUI("4 Bands");
 	}
 	
@@ -342,15 +342,16 @@ public class Start extends JFrame{
 	multiplierButton.setBackground(null);
 	}
 	
-	private void clearSelectedBandsList(int numberOfBands) {
+	private void clearSelectedBandsList(String numberOfBands) {
 		selectedBandsList.clear();
-		selectedBandsList.add(0,this.numberOfBands);
+		selectedBandsList.add(0,numberOfBands);
 		selectedBandsList.add(1,"");
 		selectedBandsList.add(2,"");
 		selectedBandsList.add(3,"");
 		selectedBandsList.add(4,"");
 		selectedBandsList.add(5,"");
 		selectedBandsList.add(6,"");
+		
 	}
 	
 	private void paintButton(JButton buttonToPaint, String colorName) {
