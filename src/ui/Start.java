@@ -139,24 +139,10 @@ public class Start extends JFrame{
 		bandsComboBox.setSelectedIndex(1);
 		bandsComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				arrangeUI(bandsComboBox.getSelectedItem().toString());
-				switch (bandsComboBox.getSelectedItem().toString()) {
-				case "3 Bands":
-					clearSelectedBandsList(3);
-					break;
-				case "4 Bands":
-					clearSelectedBandsList(4);
-					break;
-				case "5 Bands":
-					clearSelectedBandsList(5);
-					break;
-				case "6 Bands":
-					clearSelectedBandsList(6);
-					break;
-				default:
-					clearSelectedBandsList(4);
-					break;
-				}
+				String bandsSelection = new String(bandsComboBox.getSelectedItem().toString());
+				arrangeUI(bandsSelection);
+				clearSelectedBandsList(Integer.parseInt(Character.toString(bandsSelection.charAt(0))));
+				
 			}
 		});
 		
