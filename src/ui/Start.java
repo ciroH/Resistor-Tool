@@ -202,6 +202,35 @@ public class Start extends JFrame{
 		JButton processButton = new JButton("");
 		processButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				boolean baseBandsnotEmpty = false;
+				if (!selectedBandsList.get(1).equals("") && !selectedBandsList.get(2).equals("") && !selectedBandsList.get(4).equals("")) {
+					baseBandsnotEmpty = true;
+				}
+				if (baseBandsnotEmpty) {
+					if (selectedBandsList.get(0).equals("3 Bands")) {
+						//measureResistorProperties(3 Bands)
+					} else if (selectedBandsList.get(0).equals("4 Bands")) {
+						 if (!selectedBandsList.get(5).equals("")){
+							//measureResistorProperties(4 Bands)	
+						} else {
+							notifyIncompleteBands();
+						}
+					} else if (selectedBandsList.get(0).equals("5 Bands")) {
+						if (!selectedBandsList.get(5).equals("") && !selectedBandsList.get(3).equals("")){
+							//measureResistorProperties(5 Bands)	
+						} else {
+							notifyIncompleteBands();
+						}
+					} else if (selectedBandsList.get(0).equals("6 Bands")) {
+						if (!selectedBandsList.get(5).equals("") && !selectedBandsList.get(3).equals("") && !selectedBandsList.get(6).equals("")){
+							//measureResistorProperties(6 Bands)	
+						} else {
+							notifyIncompleteBands();
+						}
+					}
+				} else {
+					notifyIncompleteBands();
+				}
 			}
 		});
 		processButton.setBounds(125, 136, 32, 32);
@@ -321,6 +350,10 @@ public class Start extends JFrame{
 		}
 	}
 	
+	private void notifyIncompleteBands() {
+		JOptionPane.showMessageDialog(null, "Please select a color for each band");
+	}
+	
 	private void setVisibleMinBands(boolean state) {
 		digit1Button.setVisible(state);
 		digit2Button.setVisible(state);
@@ -403,5 +436,5 @@ public class Start extends JFrame{
 	}
 	//TODO: finish MeasureResistorProperties
 	//TODO: create JPanel for showing results
-	//TODO: finish writing ActionListener for refresh and process JButtons. Extract switch from JcomboBox's ActionListener and integrate it into clearSelectedBandsList, to use it in the refresh JButton ActionListener
+	//TODO: finish writing ActionListener for process JButton.
 }
