@@ -63,8 +63,6 @@ public class Start extends JFrame{
 		setBounds(0,0,240,300);
 		setLocationRelativeTo(null);
 		
-		clearSelectedBandsList(4);
-		
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -203,6 +201,10 @@ public class Start extends JFrame{
 		JButton refreshButton = new JButton("");
 		refreshButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String numberOfBands = Character.toString(bandsComboBox.getSelectedItem().toString().charAt(0));
+				clearBandsColor();
+				clearSelectedBandsList(Integer.parseInt(numberOfBands));
+				//clear resultsPane
 				
 			}
 		});
@@ -228,6 +230,7 @@ public class Start extends JFrame{
 		contentPane.add(ResultsPane);
 		ResultsPane.setLayout(null);
 		
+		clearSelectedBandsList(4);
 		arrangeUI("4 Bands");
 	}
 	
@@ -411,8 +414,6 @@ public class Start extends JFrame{
 		buttonToPaint.setBackground(color);
 		}
 	}
-	
-	//TODO: create method paintButton(JButton buttonToPaint,String color), and finish writing ActionListener of band's JButton
 	//TODO: finish MeasureResistorProperties
 	//TODO: create JPanel for showing results
 	//TODO: finish writing ActionListener for refresh and process JButtons. Extract switch from JcomboBox's ActionListener and integrate it into clearSelectedBandsList, to use it in the refresh JButton ActionListener
