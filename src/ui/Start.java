@@ -36,7 +36,7 @@ public class Start extends JFrame{
 	private JButton digit2Button;
 	ArrayList<String> selectedBandsList = new ArrayList<>();// numberOfBands == [0] // band == [1+]
 	String numberOfBands = "4 Bands";	//used when calling logic.Processing
-	private JPanel ResultsPane;
+	private JPanel resultsPane;
 	
 	public static void main(String[] args) {
 		int width = getScreenWidth();
@@ -70,11 +70,11 @@ public class Start extends JFrame{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel ResistorPaneMid = new JPanel();
-		ResistorPaneMid.setBackground(new Color(210, 180, 140));
-		ResistorPaneMid.setBounds(70, 83, 100, 25);
-		contentPane.add(ResistorPaneMid);
-		ResistorPaneMid.setLayout(null);
+		JPanel resistorPaneMid = new JPanel();
+		resistorPaneMid.setBackground(new Color(210, 180, 140));
+		resistorPaneMid.setBounds(70, 83, 100, 25);
+		contentPane.add(resistorPaneMid);
+		resistorPaneMid.setLayout(null);
 		
 		digit2Button = new JButton("");
 		digit2Button.addActionListener(new ActionListener() {
@@ -87,7 +87,7 @@ public class Start extends JFrame{
 			}
 		});
 		digit2Button.setBounds(7, 0, 10, 25);
-		ResistorPaneMid.add(digit2Button);
+		resistorPaneMid.add(digit2Button);
 		
 		digit3Button = new JButton("");
 		digit3Button.addActionListener(new ActionListener() {
@@ -99,7 +99,7 @@ public class Start extends JFrame{
 			}
 		});
 		digit3Button.setBounds(27, 0, 10, 25);
-		ResistorPaneMid.add(digit3Button);
+		resistorPaneMid.add(digit3Button);
 		
 		multiplierButton = new JButton("");
 		multiplierButton.addActionListener(new ActionListener() {
@@ -111,7 +111,7 @@ public class Start extends JFrame{
 			}
 		});
 		multiplierButton.setBounds(50, 0, 10, 25);
-		ResistorPaneMid.add(multiplierButton);
+		resistorPaneMid.add(multiplierButton);
 		
 		toleranceButton = new JButton("");
 		toleranceButton.addActionListener(new ActionListener() {
@@ -123,7 +123,7 @@ public class Start extends JFrame{
 			}
 		});
 		toleranceButton.setBounds(75, 0, 10, 25);
-		ResistorPaneMid.add(toleranceButton);
+		resistorPaneMid.add(toleranceButton);
 		
 		ArrayList<String> comboBoxOptions = new ArrayList<>();
 		comboBoxOptions.add("3 Bands");
@@ -149,11 +149,11 @@ public class Start extends JFrame{
 		
 		contentPane.add(bandsComboBox);
 		
-		JPanel ResistorPaneFirst = new JPanel();
-		ResistorPaneFirst.setLayout(null);
-		ResistorPaneFirst.setBackground(new Color(210, 180, 140));
-		ResistorPaneFirst.setBounds(50, 81, 20, 29);
-		contentPane.add(ResistorPaneFirst);
+		JPanel resistorPaneFirst = new JPanel();
+		resistorPaneFirst.setLayout(null);
+		resistorPaneFirst.setBackground(new Color(210, 180, 140));
+		resistorPaneFirst.setBounds(50, 81, 20, 29);
+		contentPane.add(resistorPaneFirst);
 		
 		digit1Button = new JButton("");
 		digit1Button.addActionListener(new ActionListener() {
@@ -165,13 +165,13 @@ public class Start extends JFrame{
 			}
 		});
 		digit1Button.setBounds(5, 0, 10, 29);
-		ResistorPaneFirst.add(digit1Button);
+		resistorPaneFirst.add(digit1Button);
 		
-		JPanel ResistorPaneLast = new JPanel();
-		ResistorPaneLast.setLayout(null);
-		ResistorPaneLast.setBackground(new Color(210, 180, 140));
-		ResistorPaneLast.setBounds(170, 81, 20, 29);
-		contentPane.add(ResistorPaneLast);
+		JPanel resistorPaneLast = new JPanel();
+		resistorPaneLast.setLayout(null);
+		resistorPaneLast.setBackground(new Color(210, 180, 140));
+		resistorPaneLast.setBounds(170, 81, 20, 29);
+		contentPane.add(resistorPaneLast);
 		
 		tempCoeffButton = new JButton("");
 		tempCoeffButton.addActionListener(new ActionListener() {
@@ -183,7 +183,7 @@ public class Start extends JFrame{
 			}
 		});
 		tempCoeffButton.setBounds(5, 0, 10, 29);
-		ResistorPaneLast.add(tempCoeffButton);
+		resistorPaneLast.add(tempCoeffButton);
 		
 		JButton refreshButton = new JButton("");
 		refreshButton.addActionListener(new ActionListener() {
@@ -239,17 +239,17 @@ public class Start extends JFrame{
 		Icon processIcon = new ImageIcon("res/processIcon.png");
 		processButton.setIcon(processIcon);
 		
-		ResultsPane = new JPanel();
-		ResultsPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		ResultsPane.setBackground(Color.GRAY);
-		ResultsPane.setBounds(12, 180, 208, 80);
-		contentPane.add(ResultsPane);
+		resultsPane = new JPanel();
+		resultsPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		resultsPane.setBackground(Color.GRAY);
+		resultsPane.setBounds(12, 180, 208, 80);
+		contentPane.add(resultsPane);
 		GridBagLayout gbl_ResultsPane = new GridBagLayout();
 		gbl_ResultsPane.columnWidths = new int[]{0};
 		gbl_ResultsPane.rowHeights = new int[]{0};
 		gbl_ResultsPane.columnWeights = new double[]{Double.MIN_VALUE};
 		gbl_ResultsPane.rowWeights = new double[]{Double.MIN_VALUE};
-		ResultsPane.setLayout(gbl_ResultsPane);
+		resultsPane.setLayout(gbl_ResultsPane);
 		
 		clearSelectedBandsList("4 Bands");
 		arrangeUI("4 Bands");
