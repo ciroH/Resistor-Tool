@@ -23,6 +23,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
+import java.awt.GridBagLayout;
 
 public class Start extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -243,7 +244,12 @@ public class Start extends JFrame{
 		ResultsPane.setBackground(Color.GRAY);
 		ResultsPane.setBounds(12, 180, 208, 80);
 		contentPane.add(ResultsPane);
-		ResultsPane.setLayout(null);
+		GridBagLayout gbl_ResultsPane = new GridBagLayout();
+		gbl_ResultsPane.columnWidths = new int[]{0};
+		gbl_ResultsPane.rowHeights = new int[]{0};
+		gbl_ResultsPane.columnWeights = new double[]{Double.MIN_VALUE};
+		gbl_ResultsPane.rowWeights = new double[]{Double.MIN_VALUE};
+		ResultsPane.setLayout(gbl_ResultsPane);
 		
 		clearSelectedBandsList("4 Bands");
 		arrangeUI("4 Bands");
