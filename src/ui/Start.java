@@ -196,7 +196,7 @@ public class Start extends JFrame{
 				String bandsSelection = bandsComboBox.getSelectedItem().toString();
 				clearBandsColor();
 				clearSelectedBandsList(bandsSelection);
-				//clear resultsPane
+				resultsLabel.setText("");
 				
 			}
 		});
