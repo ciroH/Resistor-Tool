@@ -41,7 +41,7 @@ public class Start extends JFrame{
 	ArrayList<String> selectedBandsList = new ArrayList<>();// numberOfBands == [0] // band == [1+]
 	String numberOfBands = "4 Bands";	//used when calling logic.Processing
 	private JPanel resultsPane;
-	private JLabel resultsLabel = new JLabel("",SwingConstants.CENTER);
+	private JLabel resultsLabel = new JLabel("");
 	
 	public static void main(String[] args) {
 		int width = getScreenWidth();
@@ -208,28 +208,33 @@ public class Start extends JFrame{
 		JButton processButton = new JButton("");
 		processButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String results = new String();
 				boolean baseBandsnotEmpty = false;
 				if (!selectedBandsList.get(1).equals("") && !selectedBandsList.get(2).equals("") && !selectedBandsList.get(4).equals("")) {
 					baseBandsnotEmpty = true;
 				}
 				if (baseBandsnotEmpty) {
 					if (selectedBandsList.get(0).equals("3 Bands")) {
-						//measureResistorProperties(3 Bands)
+						results = MeasureResistorProperties(selectedBandsList.get(1), selectedBandsList.get(2), null, selectedBandsList.get(4), null, null);
+						
 					} else if (selectedBandsList.get(0).equals("4 Bands")) {
 						 if (!selectedBandsList.get(5).equals("")){
-							//measureResistorProperties(4 Bands)	
+								results = MeasureResistorProperties(selectedBandsList.get(1), selectedBandsList.get(2), null, selectedBandsList.get(4), selectedBandsList.get(5), null);
+								
 						} else {
 							notifyIncompleteBands();
 						}
 					} else if (selectedBandsList.get(0).equals("5 Bands")) {
 						if (!selectedBandsList.get(5).equals("") && !selectedBandsList.get(3).equals("")){
-							//measureResistorProperties(5 Bands)	
+							results = MeasureResistorProperties(selectedBandsList.get(1), selectedBandsList.get(2), selectedBandsList.get(3), selectedBandsList.get(4), selectedBandsList.get(5), null);
+							
 						} else {
 							notifyIncompleteBands();
 						}
 					} else if (selectedBandsList.get(0).equals("6 Bands")) {
 						if (!selectedBandsList.get(5).equals("") && !selectedBandsList.get(3).equals("") && !selectedBandsList.get(6).equals("")){
-							//measureResistorProperties(6 Bands)	
+							results = MeasureResistorProperties(selectedBandsList.get(1), selectedBandsList.get(2), selectedBandsList.get(3), selectedBandsList.get(4), selectedBandsList.get(5), selectedBandsList.get(6));
+							
 						} else {
 							notifyIncompleteBands();
 						}
@@ -237,6 +242,7 @@ public class Start extends JFrame{
 				} else {
 					notifyIncompleteBands();
 				}
+				resultsLabel.setText(results);
 			}
 		});
 		processButton.setBounds(125, 136, 32, 32);
@@ -249,19 +255,10 @@ public class Start extends JFrame{
 		resultsPane.setBackground(Color.GRAY);
 		resultsPane.setBounds(12, 180, 208, 80);
 		contentPane.add(resultsPane);
-		GridBagLayout gbl_resultsPane = new GridBagLayout();
-		gbl_resultsPane.columnWidths = new int[]{50, 0};
-		gbl_resultsPane.rowHeights = new int[]{30, 15, 0};
-		gbl_resultsPane.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-		gbl_resultsPane.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		resultsPane.setLayout(gbl_resultsPane);
+		resultsPane.setLayout(null);
 		
-		resultsLabel = new JLabel("results");
-		GridBagConstraints gbc_resultsLabel = new GridBagConstraints();
-		gbc_resultsLabel.anchor = GridBagConstraints.CENTER;
-		gbc_resultsLabel.gridx = 1;
-		gbc_resultsLabel.gridy = 1;
-		resultsPane.add(resultsLabel, gbc_resultsLabel);
+		resultsLabel.setBounds(0, 0, 208, 80);
+		resultsPane.add(resultsLabel);
 		resultsLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		clearSelectedBandsList("4 Bands");
@@ -450,7 +447,11 @@ public class Start extends JFrame{
 			color = new Color(0,0,0);
 			break;
 		}
+		
 		buttonToPaint.setBackground(color);
+		
 		}
 	}
+		//TODO: finish MeasureResistorProperties
+		//TODO: finish writing ActionListener for process JButton.
 }
