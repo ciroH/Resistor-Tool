@@ -3,6 +3,7 @@ package ui;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.text.AttributeSet.ColorAttribute;
@@ -24,6 +25,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
 import java.awt.GridBagLayout;
+import javax.swing.JLabel;
+import java.awt.GridBagConstraints;
+import javax.swing.BoxLayout;
 
 public class Start extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -37,6 +41,7 @@ public class Start extends JFrame{
 	ArrayList<String> selectedBandsList = new ArrayList<>();// numberOfBands == [0] // band == [1+]
 	String numberOfBands = "4 Bands";	//used when calling logic.Processing
 	private JPanel resultsPane;
+	private JLabel resultsLabel = new JLabel("",SwingConstants.CENTER);
 	
 	public static void main(String[] args) {
 		int width = getScreenWidth();
@@ -244,12 +249,20 @@ public class Start extends JFrame{
 		resultsPane.setBackground(Color.GRAY);
 		resultsPane.setBounds(12, 180, 208, 80);
 		contentPane.add(resultsPane);
-		GridBagLayout gbl_ResultsPane = new GridBagLayout();
-		gbl_ResultsPane.columnWidths = new int[]{0};
-		gbl_ResultsPane.rowHeights = new int[]{0};
-		gbl_ResultsPane.columnWeights = new double[]{Double.MIN_VALUE};
-		gbl_ResultsPane.rowWeights = new double[]{Double.MIN_VALUE};
-		resultsPane.setLayout(gbl_ResultsPane);
+		GridBagLayout gbl_resultsPane = new GridBagLayout();
+		gbl_resultsPane.columnWidths = new int[]{50, 0};
+		gbl_resultsPane.rowHeights = new int[]{30, 15, 0};
+		gbl_resultsPane.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_resultsPane.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		resultsPane.setLayout(gbl_resultsPane);
+		
+		resultsLabel = new JLabel("results");
+		GridBagConstraints gbc_resultsLabel = new GridBagConstraints();
+		gbc_resultsLabel.anchor = GridBagConstraints.CENTER;
+		gbc_resultsLabel.gridx = 1;
+		gbc_resultsLabel.gridy = 1;
+		resultsPane.add(resultsLabel, gbc_resultsLabel);
+		resultsLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		clearSelectedBandsList("4 Bands");
 		arrangeUI("4 Bands");
@@ -440,7 +453,4 @@ public class Start extends JFrame{
 		buttonToPaint.setBackground(color);
 		}
 	}
-	//TODO: finish MeasureResistorProperties
-	//TODO: create JPanel for showing results
-	//TODO: finish writing ActionListener for process JButton.
 }
