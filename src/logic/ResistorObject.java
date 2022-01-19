@@ -3,12 +3,12 @@ package logic;
 import java.util.HashMap;
 
 public class ResistorObject {
-	HashMap<String, Integer> digit1;
-	HashMap<String, Integer> digit2;
-	HashMap<String, Integer> digit3;
-	HashMap<String, Float> multiplier;
-	HashMap<String, String> tolerance;
-	HashMap<String, Integer> tempCoeff;
+	HashMap<String, Integer> digit1 = new HashMap<>();
+	HashMap<String, Integer> digit2 = new HashMap<>();
+	HashMap<String, Integer> digit3 = new HashMap<>();
+	HashMap<String, Float> multiplier = new HashMap<>();
+	HashMap<String, String> tolerance = new HashMap<>();
+	HashMap<String, Integer> tempCoeff = new HashMap<>();
 	
 	public ResistorObject() {
 		setDefaultValues();
