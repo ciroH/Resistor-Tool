@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.text.AttributeSet.ColorAttribute;
 
+import logic.Processing;
 import logic.ResistorObject;
 
 import java.awt.GraphicsEnvironment;
@@ -42,6 +43,7 @@ public class Start extends JFrame{
 	String numberOfBands = "4 Bands";	//used when calling logic.Processing
 	private JPanel resultsPane;
 	private JLabel resultsLabel = new JLabel("");
+	private Processing calculator = new Processing();
 	
 	public static void main(String[] args) {
 		int width = getScreenWidth();
@@ -215,25 +217,25 @@ public class Start extends JFrame{
 				}
 				if (baseBandsnotEmpty) {
 					if (selectedBandsList.get(0).equals("3 Bands")) {
-						results = MeasureResistorProperties(selectedBandsList.get(1), selectedBandsList.get(2), null, selectedBandsList.get(4), null, null);
+						results = calculator.measureResistor(selectedBandsList.get(0),selectedBandsList.get(1), selectedBandsList.get(2), null, selectedBandsList.get(4), null, null);
 						
 					} else if (selectedBandsList.get(0).equals("4 Bands")) {
 						 if (!selectedBandsList.get(5).equals("")){
-								results = MeasureResistorProperties(selectedBandsList.get(1), selectedBandsList.get(2), null, selectedBandsList.get(4), selectedBandsList.get(5), null);
+								results = calculator.measureResistor(selectedBandsList.get(0),selectedBandsList.get(1), selectedBandsList.get(2), null, selectedBandsList.get(4), selectedBandsList.get(5), null);
 								
 						} else {
 							notifyIncompleteBands();
 						}
 					} else if (selectedBandsList.get(0).equals("5 Bands")) {
 						if (!selectedBandsList.get(5).equals("") && !selectedBandsList.get(3).equals("")){
-							results = MeasureResistorProperties(selectedBandsList.get(1), selectedBandsList.get(2), selectedBandsList.get(3), selectedBandsList.get(4), selectedBandsList.get(5), null);
+							results = calculator.measureResistor(selectedBandsList.get(0),selectedBandsList.get(1), selectedBandsList.get(2), selectedBandsList.get(3), selectedBandsList.get(4), selectedBandsList.get(5), null);
 							
 						} else {
 							notifyIncompleteBands();
 						}
 					} else if (selectedBandsList.get(0).equals("6 Bands")) {
 						if (!selectedBandsList.get(5).equals("") && !selectedBandsList.get(3).equals("") && !selectedBandsList.get(6).equals("")){
-							results = MeasureResistorProperties(selectedBandsList.get(1), selectedBandsList.get(2), selectedBandsList.get(3), selectedBandsList.get(4), selectedBandsList.get(5), selectedBandsList.get(6));
+							results = calculator.measureResistor(selectedBandsList.get(0),selectedBandsList.get(1), selectedBandsList.get(2), selectedBandsList.get(3), selectedBandsList.get(4), selectedBandsList.get(5), selectedBandsList.get(6));
 							
 						} else {
 							notifyIncompleteBands();
