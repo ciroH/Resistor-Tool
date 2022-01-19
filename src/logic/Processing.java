@@ -11,37 +11,37 @@ public class Processing {
 		String tolerance = new String();
 		Integer tempCoeff;
 		Float resistorValue;
+		String results = new String();
 		//set basic resistor values
 		digit1 = resistorReference.getDigit1(digit1Color);
 		digit2 = resistorReference.getDigit2(digit2Color);
 		multiplier = resistorReference.getMultiplier(multiplierColor);
+		tolerance = resistorReference.getTolerance(toleranceColor);
 		switch (numberOfBands) {
 		case "3 Bands":
-			
+			resistorValue = Integer.parseInt(digit1.toString() + digit2.toString()) * multiplier;
+			results = resistorValue.toString() + "Ω\n" + tolerance;
 			break;
 		case "4 Bands":
-			tolerance = resistorReference.getTolerance(toleranceColor);
-			
+			resistorValue = Integer.parseInt(digit1.toString() + digit2.toString()) * multiplier;
+			results = resistorValue.toString() + "Ω\n" + tolerance;
 			break;
 		case "5 Bands":
-			tolerance = resistorReference.getTolerance(toleranceColor);
 			digit3 = resistorReference.getDigit3(digit3Color);
-			
+			resistorValue = Integer.parseInt(digit1.toString() + digit2.toString() + digit3.toString()) * multiplier;
+			results = resistorValue.toString() + "Ω\n" + tolerance;
 			break;
 		case "6 Bands":
-			tolerance = resistorReference.getTolerance(toleranceColor);
 			digit3 = resistorReference.getDigit3(digit3Color);
 			tempCoeff = resistorReference.getTempCoeff(tempCoeffColor);
-			
+			resistorValue = Integer.parseInt(digit1.toString() + digit2.toString() + digit3.toString()) * multiplier;
+			results = resistorValue.toString() + "Ω\n" + tolerance + "\n"  + tempCoeff.toString() + "ppm";
 			break;
-
 		default:
+			resistorValue = Integer.parseInt(digit1.toString() + digit2.toString()) * multiplier;
+			results = resistorValue.toString() + "Ω\n" + tolerance;
 			break;
 		}
 		 
-		 
-		
-			
-	return "";} //I'll return 3 lines: value (ohms), tolerance, and tempCoeff
-	
+	return results;} //I'll return 3 lines: value (ohm), tolerance, and tempCoeff
 }
