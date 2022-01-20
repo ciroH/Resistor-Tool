@@ -458,6 +458,5 @@ public class Start extends JFrame{
 		
 		}
 	}
-		//TODO: finish MeasureResistorProperties
-		//TODO: finish writing ActionListener for process JButton.
+
 }
