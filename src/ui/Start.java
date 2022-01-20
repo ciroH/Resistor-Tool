@@ -44,6 +44,7 @@ public class Start extends JFrame{
 	private JPanel resultsPane;
 	private JLabel resultsLabel = new JLabel("");
 	private Processing calculator = new Processing();
+	public ImageIcon appIcon;
 	
 	public static void main(String[] args) {
 		int width = getScreenWidth();
@@ -70,6 +71,9 @@ public class Start extends JFrame{
 		setBackground(Color.GRAY);
 		setBounds(0,0,240,300);
 		setLocationRelativeTo(null);
+		
+		appIcon = new ImageIcon("res/alternative-icon.png");
+		setIconImage(appIcon.getImage());
 		
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
