@@ -5,30 +5,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.text.AttributeSet.ColorAttribute;
-
-import logic.Processing;
-import logic.ResistorObject;
-
 import java.awt.GraphicsEnvironment;
-import java.awt.HeadlessException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.awt.Color;
-import java.awt.GraphicsEnvironment;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import logic.Processing;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
-import java.awt.GridBagLayout;
 import javax.swing.JLabel;
-import java.awt.GridBagConstraints;
-import javax.swing.BoxLayout;
 
 public class Start extends JFrame{
 	private static final long serialVersionUID = 1L;
