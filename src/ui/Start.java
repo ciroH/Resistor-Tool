@@ -318,21 +318,6 @@ public class Start extends JFrame{
 		
 	return selectedColor;} //if showColorSelection.isEmpty {/*do nothing*/} else paint the band JButton that calls this method
 	
-	private String MeasureResistorProperties(String digit1Color, String digit2Color, String digit3Color, String multiplierColor, String toleranceColor, String tempCoeffColor){
-		ResistorObject resistor = new ResistorObject();
-		String resistorInfo = new String();
-		//if calls logic.Processing to measure resistor, sends numberOfBands value
-		if (toleranceColor == null) {
-			//numberOfBands = 3;
-		} else if(digit3Color == null){
-			//numberOfBands = 4;
-		} else if(tempCoeffColor == null){
-			//numberOfBands = 5;
-		} else {
-			//numberOfBands = 6;
-		}
-	return resistorInfo;}
-	
 	private void arrangeUI(String numberOfBands) {
 		switch (numberOfBands) {
 		case "3 Bands":
