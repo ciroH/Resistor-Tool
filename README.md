@@ -4,7 +4,7 @@
 
 A tool built to measure a resistor's specs.
 
-It can work with 3, 4 ,5 and 6 bands Resistors, and display:
+It can work with 3, 4, 5 and 6 bands Resistors, and display:
 
 * Resistance
 
