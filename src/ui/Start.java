@@ -1,3 +1,23 @@
+/*
+ * 	 Resistor-Tool: A tool built to measure a resistor's specs.
+ *   Copyright (C) 2022  Ciro Haskour
+ 
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License version 2, as published by
+ *   the Free Software Foundation.
+ 
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License along
+ *   with this program; if not, write to the Free Software Foundation, Inc.,
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *   
+ *   You can also contact the author of this program by sending an email at ciroh.jobs@gmail.com
+ */
+
 package ui;
 
 import javax.swing.JFrame;
@@ -29,7 +49,7 @@ public class Start extends JFrame{
 	private JButton toleranceButton;
 	private JButton multiplierButton;
 	private JButton digit2Button;
-	ArrayList<String> selectedBandsList = new ArrayList<>();// numberOfBands == [0] // band == [1+]
+	ArrayList<String> selectedBandsList = new ArrayList<>(); //numberOfBands == [0] // band == [1+]
 	String numberOfBands = "4 Bands";	//used when calling logic.Processing
 	private JPanel resultsPane;
 	private JLabel resultsLabel = new JLabel("");
